@@ -1,0 +1,16 @@
+{
+  "name": "1upmonster-sdk",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "build": "turbo build",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "clean": "turbo clean"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  }
+}

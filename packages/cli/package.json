@@ -1,0 +1,29 @@
+{
+  "name": "@1upmonster/cli",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "1up": "./dist/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "dev": "node --watch dist/index.js"
+  },
+  "dependencies": {
+    "@1upmonster/sdk": "workspace:*",
+    "@1upmonster/types": "workspace:*",
+    "@1upmonster/versus": "workspace:*",
+    "@solana/kit": "^6.1.0",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
