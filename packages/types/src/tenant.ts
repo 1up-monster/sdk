@@ -13,8 +13,14 @@ export interface Game {
 }
 
 export interface ApiKey {
-  key: string;
+  id: string;
+  name: string;
+  created_at: number;
+}
+
+export interface CreatedApiKey {
+  id: string;
   gameId: string;
-  tenantId: string;
-  createdAt: number;
+  name: string;
+  key: string;
 }

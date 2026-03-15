@@ -2,6 +2,7 @@
 import { Command } from "commander";
 import { registerAuth } from "./commands/auth.js";
 import { registerTenant } from "./commands/tenant.js";
+import { registerGameApiKeys } from "./commands/game-api-keys.js";
 import { registerVersusConfig } from "./commands/versus/config.js";
 import { registerVersusMatch } from "./commands/versus/match.js";
 import { setJsonMode } from "./output.js";
@@ -20,7 +21,8 @@ program
   });
 
 registerAuth(program);
-registerTenant(program);
+const game = registerTenant(program);
+registerGameApiKeys(game);
 
 // Versus service
 const versus = program.command("versus").description("Versus — matchmaking service");

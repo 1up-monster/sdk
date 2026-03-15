@@ -4,7 +4,7 @@ import { requireCredentials } from "../credentials.js";
 import { fail, print } from "../output.js";
 import { API_BASE } from "../config.js";
 
-export function registerTenant(program: Command): void {
+export function registerTenant(program: Command): Command {
   const tenant = program.command("tenant").description("Manage your tenant");
 
   tenant
@@ -60,4 +60,6 @@ export function registerTenant(program: Command): void {
       await client.deleteGame(gameId).catch((e: Error) => fail(e.message));
       print(`Game ${gameId} deleted.`);
     });
+
+  return game;
 }
