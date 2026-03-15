@@ -1,6 +1,6 @@
 # 1upmonster SDK
 
-Multiplayer infrastructure for web3 games — built on Cloudflare, Solana-native.
+Multiplayer infrastructure for web3 games — Solana-native.
 
 ## Packages
 
