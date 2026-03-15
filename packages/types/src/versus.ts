@@ -129,6 +129,12 @@ export interface VersusConfig {
   /** What to do when queue TTL expires (default: "expire") */
   expireBehavior: ExpireBehavior;
   /**
+   * Optional Solana RPC URL for this game's ELO reads.
+   * When set, overrides the platform default (env.SOLANA_RPC_URL).
+   * Must be an https:// URL. Allows per-game devnet/mainnet isolation.
+   */
+  rpcUrl?: string;
+  /**
    * Optional game processor. When set the Room DO routes player game_message
    * events exclusively to the processor instead of relaying P2P.
    * Omit for pure P2P relay mode (default, backwards-compatible).

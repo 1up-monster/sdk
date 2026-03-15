@@ -44,6 +44,7 @@ export function registerVersusConfig(versus: Command): void {
     .option("--match-ttl <s>", "Match TTL in seconds", parseInt)
     .option("--accept-window <s>", "Match accept window in seconds", parseInt)
     .option("--expire-behavior <behavior>", "expire | match_any")
+    .option("--rpc-url <url>", "Solana RPC URL for ELO reads (overrides platform default)")
     .action(async (gameId: string, opts: Record<string, unknown>) => {
       const creds = await requireCredentials();
       const client = new VersusClient({ baseUrl: API_BASE, token: creds.token });
@@ -91,6 +92,7 @@ export function registerVersusConfig(versus: Command): void {
       if (opts["matchTtl"] !== undefined) patch.matchTtl = opts["matchTtl"] as number;
       if (opts["acceptWindow"] !== undefined) patch.acceptWindow = opts["acceptWindow"] as number;
       if (opts["expireBehavior"] !== undefined) patch.expireBehavior = opts["expireBehavior"] as ExpireBehavior;
+      if (opts["rpcUrl"] !== undefined) patch.rpcUrl = opts["rpcUrl"] as string;
 
       const result = await client.setConfig(gameId, patch).catch((e: Error) => fail(e.message));
       print(result);
